@@ -13,7 +13,7 @@ Adds a **Ware Overview** tab to the **Property Owned** menu in the map. Lists al
 - **Cached data**: Ware and station data are refreshed periodically to avoid redundant lookups every render.
 - **Configurable refresh interval**: The data refresh interval (1-10 ticks, default 3) can be adjusted in **Extension options**.
 - **Tab positioning**: The tab is placed after the **Production Stations** tab when that mod is also installed, otherwise after the **Stations** tab.
-- **Compatible with X4 8.00 and 9.00**.
+- **Compatible with X4 8.00 and 9.00 beta**.
 
 ## Requirements
 
