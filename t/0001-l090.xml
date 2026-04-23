@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Turkish -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Mal Genel Bakışı</t>
+      <t id="2">Oyuncuya ait istasyonlardaki tüm malları taşıma türüne göre listeler; toplam stok, üretim ve tüketim bilgilerini gösterir. İstasyon bazında ayrıntılara genişletilebilir.</t>
+
+      <!-- status messages -->
+      <t id="1000">Oyuncu istasyonlarında mal bulunamadı</t>
+
+      <!-- settings labels -->
+      <t id="90001">Mal Genel Bakışı Sekmesi</t>
+      <t id="90011">Veri yenileme aralığı \(tik\)</t>
+    </page>
+  </add>
+</diff>

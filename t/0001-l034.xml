@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Spanish -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Resumen de mercancías</t>
+      <t id="2">Lista todas las mercancías en estaciones del jugador por tipo de transporte, con stock, producción y consumo totales. Expandible hasta el detalle por estación.</t>
+
+      <!-- status messages -->
+      <t id="1000">No se encontraron mercancías en estaciones del jugador</t>
+
+      <!-- settings labels -->
+      <t id="90001">Pestaña Resumen de mercancías</t>
+      <t id="90011">Intervalo de actualización de datos \(ticks\)</t>
+    </page>
+  </add>
+</diff>

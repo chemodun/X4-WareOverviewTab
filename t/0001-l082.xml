@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Korean -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">상품 개요</t>
+      <t id="2">플레이어 소유 기지의 모든 상품을 운송 유형별로 나열하고 재고, 생산량, 소비량 합계를 표시합니다. 기지별 상세 내역으로 확장 가능.</t>
+
+      <!-- status messages -->
+      <t id="1000">플레이어 기지에서 상품을 찾을 수 없습니다</t>
+
+      <!-- settings labels -->
+      <t id="90001">상품 개요 탭</t>
+      <t id="90011">데이터 새로 고침 간격 \(틱\)</t>
+    </page>
+  </add>
+</diff>

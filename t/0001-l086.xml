@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese Simplified -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">货物总览</t>
+      <t id="2">按运输类型列出玩家所属站点的所有货物，显示库存、生产量和消耗量合计。可展开查看各站点详情。</t>
+
+      <!-- status messages -->
+      <t id="1000">在玩家站点未找到任何货物</t>
+
+      <!-- settings labels -->
+      <t id="90001">货物总览选项卡</t>
+      <t id="90011">数据刷新间隔 \(帧\)</t>
+    </page>
+  </add>
+</diff>

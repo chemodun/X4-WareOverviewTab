@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Polish -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Przegląd towarów</t>
+      <t id="2">Wyświetla wszystkie towary na stacjach gracza według typu transportu z łącznym stanem magazynu, produkcją i zużyciem. Rozwijalne do szczegółów poszczególnych stacji.</t>
+
+      <!-- status messages -->
+      <t id="1000">Nie znaleziono towarów na stacjach gracza</t>
+
+      <!-- settings labels -->
+      <t id="90001">Zakładka Przegląd towarów</t>
+      <t id="90011">Interwał odświeżania danych \(tiki\)</t>
+    </page>
+  </add>
+</diff>

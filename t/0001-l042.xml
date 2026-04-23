@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Czech -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Přehled zboží</t>
+      <t id="2">Zobrazuje veškeré zboží na stanicích hráče podle typu přepravy s celkovým skladem, produkcí a spotřebou. Rozbalitelné na detail jednotlivých stanic.</t>
+
+      <!-- status messages -->
+      <t id="1000">Na stanicích hráče nebylo nalezeno žádné zboží</t>
+
+      <!-- settings labels -->
+      <t id="90001">Záložka Přehled zboží</t>
+      <t id="90011">Interval obnovení dat \(ticky\)</t>
+    </page>
+  </add>
+</diff>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Italian -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Panoramica merci</t>
+      <t id="2">Elenca tutte le merci nelle stazioni del giocatore per tipo di trasporto, con scorte, produzione e consumo totali. Espandibile fino al dettaglio per stazione.</t>
+
+      <!-- status messages -->
+      <t id="1000">Nessuna merce trovata nelle stazioni del giocatore</t>
+
+      <!-- settings labels -->
+      <t id="90001">Scheda Panoramica merci</t>
+      <t id="90011">Intervallo di aggiornamento dati \(tick\)</t>
+    </page>
+  </add>
+</diff>

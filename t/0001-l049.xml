@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- German -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Warenübersicht</t>
+      <t id="2">Listet alle Waren auf eigenen Stationen nach Transporttyp mit Lager, Produktion und Verbrauch. Erweiterbar bis zur stationsweisen Aufschlüsselung.</t>
+
+      <!-- status messages -->
+      <t id="1000">Keine Waren an eigenen Stationen gefunden</t>
+
+      <!-- settings labels -->
+      <t id="90001">Warenübersicht-Tab</t>
+      <t id="90011">Daten-Aktualisierungsintervall \(Ticks\)</t>
+    </page>
+  </add>
+</diff>

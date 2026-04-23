@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Japanese -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">アイテム一覧</t>
+      <t id="2">プレイヤー所有の各ステーションにある全アイテムを輸送タイプ別に表示し、在庫・生産量・消費量の合計を確認できます。ステーション別の詳細に展開可能。</t>
+
+      <!-- status messages -->
+      <t id="1000">プレイヤーのステーションにアイテムが見つかりません</t>
+
+      <!-- settings labels -->
+      <t id="90001">アイテム一覧タブ</t>
+      <t id="90011">データ更新間隔 \(ティック\)</t>
+    </page>
+  </add>
+</diff>

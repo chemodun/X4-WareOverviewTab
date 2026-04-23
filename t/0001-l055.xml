@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portuguese -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Visão geral de mercadorias</t>
+      <t id="2">Lista todas as mercadorias nas estações do jogador por tipo de transporte, com estoque, produção e consumo totais. Expansível até o detalhe por estação.</t>
+
+      <!-- status messages -->
+      <t id="1000">Nenhuma mercadoria encontrada nas estações do jogador</t>
+
+      <!-- settings labels -->
+      <t id="90001">Aba Visão geral de mercadorias</t>
+      <t id="90011">Intervalo de atualização de dados \(ticks\)</t>
+    </page>
+  </add>
+</diff>

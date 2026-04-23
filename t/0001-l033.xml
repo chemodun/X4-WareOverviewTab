@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- French -->
+<diff>
+  <add sel="/language">
+    <page id="1972092420" title="Ware Overview Tab" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Vue d'ensemble des marchandises</t>
+      <t id="2">Liste toutes les marchandises des stations du joueur par type de transport, avec stock, production et consommation totaux. Extensible jusqu'au détail par station.</t>
+
+      <!-- status messages -->
+      <t id="1000">Aucune marchandise trouvée dans les stations du joueur</t>
+
+      <!-- settings labels -->
+      <t id="90001">Onglet Vue d'ensemble des marchandises</t>
+      <t id="90011">Intervalle d'actualisation des données \(ticks\)</t>
+    </page>
+  </add>
+</diff>
