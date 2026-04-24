@@ -26,8 +26,8 @@ Adds a **Ware Overview** tab to the **Property Owned** menu in the map. Lists al
 
 ## Installation
 
-- **Steam Workshop**: [Station Storage Allocation](https://steamcommunity.com/sharedfiles/filedetails/?id=3712869644) - only for **Game version 8.00** with latest Steam version of the `UI Extensions and HUD` mod (version 80.43 from April 8).
-- **Nexus Mods**: [Station Storage Allocation](https://www.nexusmods.com/x4foundations/mods/2079)
+- **Steam Workshop**: [Ware Overview Tab](https://steamcommunity.com/sharedfiles/filedetails/?id=3712869644) - only for **Game version 8.00** with latest Steam version of the `UI Extensions and HUD` mod (version 80.43 from April 8).
+- **Nexus Mods**: [Ware Overview Tab](https://www.nexusmods.com/x4foundations/mods/2079)
 
 ## Usage
 
