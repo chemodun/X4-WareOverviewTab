@@ -64,7 +64,6 @@ local wot = {
   menuMap       = nil,
   menuMapConfig = {},
   isV9          = C.GetGameVersion().major >= 9,
-  mapFontSize   = Helper.standardFontSize,
 
   -- Expand state: wot.expandedWares[wareId] = true when that ware row is open.
   expandedWares = {},
@@ -409,15 +408,15 @@ local function createWareStationRow(tblOrGroup, stEntry, maxIcons)
   local rowHeight = row[2]:getMinTextHeight(true)
 
   -- Col 3: production at this station (dark green).
-  row[3]:createText(fmtRate(stEntry.production), { halign = "right", fontsize = wot.mapFontSize, color = Color["text_player_lowlight"] })
+  row[3]:createText(fmtRate(stEntry.production), { halign = "right", color = Color["text_player_lowlight"] })
 
   -- Col 4: consumption at this station (dark red).
-  row[4]:createText(fmtRate(stEntry.consumption), { halign = "right", fontsize = wot.mapFontSize, color = Color["faction_xenon"] })
+  row[4]:createText(fmtRate(stEntry.consumption), { halign = "right", color = Color["faction_xenon"] })
 
   -- Col maxIcons, span 4: stock.
   row[maxIcons]:setColSpan(4)
                :createText(stEntry.stock > 0 and fmt(stEntry.stock) or "--",
-                 { halign = "right", fontsize = wot.mapFontSize })
+                 { halign = "right" })
 
   -- Col maxIcons+4, span 2: Logical Station Overview button.
   local lsoCell = row[maxIcons + 4]
@@ -466,6 +465,7 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
   local headerRow = ftable:addRow(false, Helper.headerRowProperties)
   headerRow[1]:setColSpan(5 + maxIcons)
               :createText(ReadText(PAGE_ID, 1), Helper.headerRowCenteredProperties)
+  numDisplayed = numDisplayed + 1
 
   -- Column headers
   local chRow = ftable:addRow(false, { fixed = true })
@@ -474,6 +474,8 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
   chRow[4]:createText(ReadText(1001, 1609), Helper.headerRowCenteredProperties)                             -- Consumption
   chRow[maxIcons]:setColSpan(4):createText(ReadText(1001, 20), Helper.headerRowCenteredProperties)          -- Stock
   chRow[maxIcons + 4]:setColSpan(2):createText(ReadText(1001, 4), Helper.headerRowCenteredProperties)       -- Stations
+
+  numDisplayed = numDisplayed + 1
 
   -- RowGroup for content (9.00+ only)
   local tblOrGroup = ftable
@@ -501,6 +503,7 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
     -- Transport-type section header
     local typeRow = tblOrGroup:addRow(false, Helper.headerRowProperties)
     typeRow[1]:setColSpan(5 + maxIcons):createText(typeName, Helper.headerRowCenteredProperties)
+    numDisplayed = numDisplayed + 1
 
     for _, item in ipairs(typeWares) do
       local wareId    = item.id
@@ -511,7 +514,7 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
       -- Ware header row (expandable only when there are stations)
       local wareRow = tblOrGroup:addRow(wareId, {bgColor = Color["row_background"]})
       if entry.stationCount > 0 then
-        wareRow[1]:createButton({ scaling = false, bgColor = Color["row_background"], highlightColor = Color["row_background"] })
+        wareRow[1]:createButton({ scaling = true, bgColor = Color["row_background"], highlightColor = Color["row_background"] })
                   :setText(isExpanded and "-" or "+", { scaling = true, halign = "center" })
         wareRow[1].handlers.onClick = function()
           wot.expandedWares[wareId] = not (wot.expandedWares[wareId] or false)
@@ -523,22 +526,21 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
       -- Col 2: ware icon + name
       wareRow[2]:createText("\027[" .. entry.icon .. "] " .. entry.name, {
         halign   = "left",
-        fontsize = wot.mapFontSize,
       })
 
       -- Col 3: total prod/h (dark green)
-      wareRow[3]:createText(fmtRate(entry.production), { halign = "right", fontsize = wot.mapFontSize, color = Color["text_player_lowlight"] })
+      wareRow[3]:createText(fmtRate(entry.production), { halign = "right", color = Color["text_player_lowlight"] })
 
       -- Col 4: total cons/h (dark red)
-      wareRow[4]:createText(fmtRate(entry.consumption), { halign = "right", fontsize = wot.mapFontSize, color = Color["faction_xenon"] })
+      wareRow[4]:createText(fmtRate(entry.consumption), { halign = "right", color = Color["faction_xenon"] })
 
       -- Col maxIcons, span 4: total stock
       wareRow[maxIcons]:setColSpan(4)
                        :createText(entry.stock > 0 and fmt(entry.stock) or "--",
-                         { halign = "right", fontsize = wot.mapFontSize })
+                         { halign = "right" })
 
       -- Col maxIcons+4, span 2: station count
-      wareRow[maxIcons + 4]:setColSpan(2):createText(entry.stationCount > 0 and tostring(entry.stationCount) or "--", { halign = "right", fontsize = wot.mapFontSize })
+      wareRow[maxIcons + 4]:setColSpan(2):createText(entry.stationCount > 0 and tostring(entry.stationCount) or "--", { halign = "right" })
 
       -- *** Expanded: per-station sub-rows ***
       if isExpanded then
@@ -578,7 +580,6 @@ function wot.Init(menuMap)
   trace("wot.Init called")
   wot.menuMap       = menuMap
   wot.menuMapConfig = menuMap.uix_getConfig()
-  wot.mapFontSize   = Helper.scaleFont(Helper.standardFont, wot.menuMapConfig.mapFontSize)
   wot.wareRegistry  = buildWareRegistry()
 
   menuMap.registerCallback(
