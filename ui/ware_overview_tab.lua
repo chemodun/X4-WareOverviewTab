@@ -496,62 +496,62 @@ function wot.displayTabData(numDisplayed, instance, ftable, infoTableData)
         table.insert(typeWares, { id = wareId, entry = entry })
       end
     end
-    if #typeWares == 0 then goto nextType end
+    if #typeWares > 0 then
 
-    table.sort(typeWares, function(a, b) return a.entry.name < b.entry.name end)
+      table.sort(typeWares, function(a, b) return a.entry.name < b.entry.name end)
 
-    -- Transport-type section header
-    local typeRow = tblOrGroup:addRow(false, Helper.headerRowProperties)
-    typeRow[1]:setColSpan(5 + maxIcons):createText(typeName, Helper.headerRowCenteredProperties)
-    numDisplayed = numDisplayed + 1
-
-    for _, item in ipairs(typeWares) do
-      local wareId    = item.id
-      local entry     = item.entry
-      local isExpanded = wot.expandedWares[wareId] or false
+      -- Transport-type section header
+      local typeRow = tblOrGroup:addRow(false, Helper.headerRowProperties)
+      typeRow[1]:setColSpan(5 + maxIcons):createText(typeName, Helper.headerRowCenteredProperties)
       numDisplayed = numDisplayed + 1
 
-      -- Ware header row (expandable only when there are stations)
-      local wareRow = tblOrGroup:addRow(wareId, {bgColor = Color["row_background"]})
-      if entry.stationCount > 0 then
-        wareRow[1]:createButton({ scaling = true, bgColor = Color["row_background"], highlightColor = Color["row_background"] })
-                  :setText(isExpanded and "-" or "+", { scaling = true, halign = "center" })
-        wareRow[1].handlers.onClick = function()
-          wot.expandedWares[wareId] = not (wot.expandedWares[wareId] or false)
-          wot.menuMap.noupdate = true
-          wot.menuMap.refreshInfoFrame()
+      for _, item in ipairs(typeWares) do
+        local wareId    = item.id
+        local entry     = item.entry
+        local isExpanded = wot.expandedWares[wareId] or false
+        numDisplayed = numDisplayed + 1
+
+        -- Ware header row (expandable only when there are stations)
+        local wareRow = tblOrGroup:addRow(wareId, {bgColor = Color["row_background"]})
+        if entry.stationCount > 0 then
+          wareRow[1]:createButton({ scaling = true, bgColor = Color["row_background"], highlightColor = Color["row_background"] })
+                    :setText(isExpanded and "-" or "+", { scaling = true, halign = "center" })
+          wareRow[1].handlers.onClick = function()
+            wot.expandedWares[wareId] = not (wot.expandedWares[wareId] or false)
+            wot.menuMap.noupdate = true
+            wot.menuMap.refreshInfoFrame()
+          end
+        end
+
+        -- Col 2: ware icon + name
+        wareRow[2]:createText("\027[" .. entry.icon .. "] " .. entry.name, {
+          halign   = "left",
+        })
+
+        -- Col 3: total prod/h (dark green)
+        wareRow[3]:createText(fmtRate(entry.production), { halign = "right", color = Color["text_player_lowlight"] })
+
+        -- Col 4: total cons/h (dark red)
+        wareRow[4]:createText(fmtRate(entry.consumption), { halign = "right", color = Color["faction_xenon"] })
+
+        -- Col maxIcons, span 4: total stock
+        wareRow[maxIcons]:setColSpan(4)
+                        :createText(entry.stock > 0 and fmt(entry.stock) or "--",
+                          { halign = "right" })
+
+        -- Col maxIcons+4, span 2: station count
+        wareRow[maxIcons + 4]:setColSpan(2):createText(entry.stationCount > 0 and tostring(entry.stationCount) or "--", { halign = "right" })
+
+        -- *** Expanded: per-station sub-rows ***
+        if isExpanded then
+          for _, stEntry in ipairs(entry.stations) do
+            createWareStationRow(tblOrGroup, stEntry, maxIcons)
+            numDisplayed = numDisplayed + 1
+          end
         end
       end
 
-      -- Col 2: ware icon + name
-      wareRow[2]:createText("\027[" .. entry.icon .. "] " .. entry.name, {
-        halign   = "left",
-      })
-
-      -- Col 3: total prod/h (dark green)
-      wareRow[3]:createText(fmtRate(entry.production), { halign = "right", color = Color["text_player_lowlight"] })
-
-      -- Col 4: total cons/h (dark red)
-      wareRow[4]:createText(fmtRate(entry.consumption), { halign = "right", color = Color["faction_xenon"] })
-
-      -- Col maxIcons, span 4: total stock
-      wareRow[maxIcons]:setColSpan(4)
-                       :createText(entry.stock > 0 and fmt(entry.stock) or "--",
-                         { halign = "right" })
-
-      -- Col maxIcons+4, span 2: station count
-      wareRow[maxIcons + 4]:setColSpan(2):createText(entry.stationCount > 0 and tostring(entry.stationCount) or "--", { halign = "right" })
-
-      -- *** Expanded: per-station sub-rows ***
-      if isExpanded then
-        for _, stEntry in ipairs(entry.stations) do
-          createWareStationRow(tblOrGroup, stEntry, maxIcons)
-          numDisplayed = numDisplayed + 1
-        end
-      end
     end
-
-    ::nextType::
   end
 
   -- Empty placeholder
