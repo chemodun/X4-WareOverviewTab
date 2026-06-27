@@ -21,7 +21,7 @@ Adds a [b]Ware Overview[/b] tab to the [b]Property Owned[/b] menu in the map. Li
 [list]
 [*] Available on Nexus Mods: [url=https://www.nexusmods.com/x4foundations/mods/552]UI Extensions and HUD[/url]
 [/list]
-[*] [b]X4: Foundations[/b]: Version [b]9.00 beta 3[/b] or higher and [b]UI Extensions and HUD[/b]: Version [b]v9.0.0.0.3[/b] or higher by [url=https://next.nexusmods.com/profile/kuertee?gameId=2659]kuertee[/url].
+[*] [b]X4: Foundations[/b]: Version [b]9.00[/b] or higher and [b]UI Extensions and HUD[/b]: Version [b]v9.0.0.5[/b] or higher by [url=https://next.nexusmods.com/profile/kuertee?gameId=2659]kuertee[/url].
 [*] [b]Mod Support APIs[/b]: Version 1.95 or higher by [url=https://next.nexusmods.com/profile/sirnukes?gameId=2659]SirNukes[/url]:
 [list]
 [*] Available on Steam: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2042901274]SirNukes Mod Support APIs[/url]
@@ -30,7 +30,7 @@ Adds a [b]Ware Overview[/b] tab to the [b]Property Owned[/b] menu in the map. Li
 [/list]
 [h2][b]Installation[/b][/h2]
 [list]
-[*] [b]Steam Workshop[/b]: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3712869644]Ware Overview Tab[/url] - only for [b]Game version 8.00[/b] with latest Steam version of the [b]UI Extensions and HUD[/b] mod (version 80.43 from April 8).
+[*] [b]Steam Workshop[/b]: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3712869644]Ware Overview Tab[/url] - only for [b]Game version 9.00[/b] with latest Steam version of the [b]UI Extensions and HUD[/b] mod.
 [*] [b]Nexus Mods[/b]: [url=https://www.nexusmods.com/x4foundations/mods/2079]Ware Overview Tab[/url]
 [/list]
 [h2][b]Usage[/b][/h2]
@@ -84,6 +84,13 @@ Click [b]+[/b] on a ware row to expand it. Each station that handles the ware ge
 [/list]
 [h2][b]Changelog[/b][/h2]
 
+[h2][8.00.02] - 2026-06-27[/h2]
+[list]
+[*] [b]Changed[/b]
+[list]
+[*] On Steam: restricted to game version 9.0 or higher
+[/list]
+[/list]
 [h2][8.00.01] - 2026-04-24[/h2]
 [list]
 [*] [b]Added[/b]
